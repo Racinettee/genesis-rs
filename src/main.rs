@@ -1,5 +1,7 @@
 use std::str::from_utf8_unchecked;
 
+mod m68k;
+
 #[derive(Debug)]
 struct Rom {
     data: Vec<u8>
@@ -66,6 +68,9 @@ impl Rom {
 }
 
 fn main() -> Result<(), &'static str> {
+    for op_code in m68k::OP_CODES {
+        println!("{}", op_code);
+    }
     println!("Hello, world!");
 
     let rom = load_rom_from_file("sonic.md").ok_or("could not load rom")?;
