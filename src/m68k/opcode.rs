@@ -4,7 +4,7 @@ use super::arch;
 
 // Structure and data referenced from
 // https://chromium.googlesource.com/native_client/nacl-gdb/+/refs/heads/main/opcodes/m68k-opc.c
-#[derive(Debug)]
+#[derive(Copy, Clone, Debug)]
 pub struct OpCode {
     name: &'static str,
     args: &'static str,
