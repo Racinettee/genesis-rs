@@ -2,8 +2,13 @@ mod m68k;
 mod md;
 
 fn main() -> Result<(), &'static str> {
+    println!("Registers:");
+    for register in m68k::cpu::REGISTER_NAMES {
+        println!("{}", register)
+    }
+    println!("Opcodes:");
     for code in m68k::OP_CODES {
-        
+        println!("{}", code)
     }
     let rom = md::rom::load_from_file("sonic.md").ok_or("could not load rom")?;
 
